@@ -45,34 +45,36 @@ class Home extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 260, left: 20, right: 20),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(35),
-                    child: Container(
-                      width: double.maxFinite,
-                      height: 70,
+                  child: Container(
+                    width: double.maxFinite,
+                    height: 70,
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                suffixIcon: Icon(Icons.search,color: Colors.green,size: 30,),
-                                label: Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: Text(
-                                    "Search",
-                                    style: TextStyle(
-                                      color: Colors.green,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                      borderRadius: BorderRadius.circular(35),
+                      boxShadow: [BoxShadow(color: Maincolor.withOpacity(0.2),offset: Offset(0, 10,),blurRadius: 20)]
+                    ),
+
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              suffixIcon: Icon(Icons.search,color: Colors.green,size: 30,),
+                              label: Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "Search",
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                border: InputBorder.none,
                               ),
+                              border: InputBorder.none,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
