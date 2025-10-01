@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_application/Widgets/tile1.dart';
 import 'package:plant_application/pages/colors.dart';
 
 class Home extends StatelessWidget {
@@ -6,6 +7,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: [
             Stack(
@@ -51,7 +53,13 @@ class Home extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(35),
-                      boxShadow: [BoxShadow(color: Maincolor.withOpacity(0.2),offset: Offset(0, 10,),blurRadius: 20)]
+                      boxShadow: [
+                        BoxShadow(
+                          color: Maincolor.withOpacity(0.2),
+                          offset: Offset(0, 10),
+                          blurRadius: 20,
+                        ),
+                      ],
                     ),
 
                     child: Row(
@@ -59,7 +67,11 @@ class Home extends StatelessWidget {
                         Expanded(
                           child: TextFormField(
                             decoration: InputDecoration(
-                              suffixIcon: Icon(Icons.search,color: Colors.green,size: 30,),
+                              suffixIcon: Icon(
+                                Icons.search,
+                                color: Colors.green,
+                                size: 30,
+                              ),
                               label: Padding(
                                 padding: const EdgeInsets.only(left: 20),
                                 child: Text(
@@ -79,6 +91,59 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Recommended",
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                      ),
+                      Spacer(),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          width: 70,
+                          height: 30,
+                          color: Maincolor,
+                          child: Center(
+                            child: Text(
+                              "More",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 290 ,
+                    width: double.maxFinite,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Tile1(),
+                        SizedBox(width: 15,),
+                        Tile1(),
+                        SizedBox(width: 15,),
+                        Tile1(),
+                        SizedBox(width: 15,),
+                        Tile1(),
+                        SizedBox(width: 15,),
+                      ],
+                    ),
+                  )
+
+                ],
+              ),
             ),
           ],
         ),
