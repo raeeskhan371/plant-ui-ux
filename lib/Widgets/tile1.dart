@@ -2,7 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:plant_application/pages/colors.dart';
 
 class Tile1 extends StatelessWidget {
-  const Tile1({super.key});
+   Tile1({super.key,required this.ImagePath,
+     required this.Price,
+     required this.Name,
+     required this.Country,
+
+
+   });
+
+   String ImagePath;
+   String Price;
+   String Name;
+   String Country;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +29,7 @@ class Tile1 extends StatelessWidget {
         borderRadius: BorderRadius.circular(13),
         color: Colors.white,
       ),
-      height: 290,
+      height: 300,
       width: 180,
 
       child: Column(
@@ -29,7 +40,7 @@ class Tile1 extends StatelessWidget {
             width: 180,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/image_1.png"),
+                image: AssetImage(ImagePath),
                 fit: BoxFit.cover,
               ),
               color: Colors.white,
@@ -41,7 +52,7 @@ class Tile1 extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Samantha",
+                  Name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
@@ -49,7 +60,7 @@ class Tile1 extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  "\$400",
+                  Price,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -62,7 +73,7 @@ class Tile1 extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Text(
-              "Russia",
+              Country,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
