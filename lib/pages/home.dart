@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_application/Widgets/tile1.dart';
+import 'package:plant_application/pages/DetailViewPage.dart';
 import 'package:plant_application/pages/colors.dart';
 
 class Home extends StatelessWidget {
